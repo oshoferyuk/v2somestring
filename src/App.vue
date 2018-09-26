@@ -1,14 +1,45 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div id="app">       
+	<b-container class="app-container">
+    <b-row>
+        <b-col cols="2" class="app-sidebar">
+          <h1>DAIRY APP</h1>
+          <h2>Comment with no sense</h2>
+          <router-link to="/">Dairy</router-link> |
+			<router-link to="/about">About</router-link>
+        </b-col>
+        <b-col cols="10"><router-view></router-view></b-col>        
+    </b-row>
+</b-container>
+	
   </div>
 </template>
 
 <style lang="scss">
+
+.app-sidebar {
+  background-color: #2b2f3e;        
+  height: 100% !important;
+  position: absolute !important;
+}
+
+h1{
+    color: white !important;
+    text-transform: uppercase;
+    font-size: 36px;
+  }
+
+  h2{
+    color: #808080;
+    font-size: 18px;
+  }
+
+
+  
+.container {
+    max-width: initial !important;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
