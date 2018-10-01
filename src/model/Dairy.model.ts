@@ -6,4 +6,8 @@ export default class Dairy{
         this.name = name;
         this.comments = comments;
     }
+
+    addComment(comment: string){
+        this.comments.push(comment);
+    }
 }

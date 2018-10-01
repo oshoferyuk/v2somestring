@@ -11,9 +11,13 @@ export default class DairyStore {
     addItem(itemName: string){
         this.dairyList.push(new Dairy(itemName))
     }
-    deleteItem(index: number){
+        
+    deleteItem(index: number){                
         // const index = this.dairyList.findIndex(dairy => dairy.name == itemName);
         this.dairyList.splice(index, 1);
-    }
+    }        
 
+    addComment(itemIndex: number, comment: string){
+        this.dairyList[itemIndex].addComment(comment);
+    }
 }

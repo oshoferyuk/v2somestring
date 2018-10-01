@@ -14,26 +14,15 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 export default class DairyItem extends Vue {
   @Prop() private item!: Dairy;
   @Prop() private index!: number;
-  selectItem(){
-      alert('select item');
+  selectItem(){      
+      this.$emit('selectItem', this.index);
   }
 
-  deleteItem(){      
+  deleteItem(){
       this.$emit('deleteItem', this.index);
   }  
 
 }
-/*
-export default {
-  name: 'DairyItem',  
-  data(){
-    return {      
-    }
-    
-  }
-}
-*/
-
 </script>
 
 

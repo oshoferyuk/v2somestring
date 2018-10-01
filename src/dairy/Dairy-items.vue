@@ -7,7 +7,7 @@
     </div>
     <div class="dairy-item__list">
       <div v-for="(item, index) in itemList" :key="index">
-        <dairy-item :item="item" :index="index" @deleteItem="deleteItem($event)"></dairy-item>
+        <dairy-item :item="item" :index="index" @deleteItem="deleteItem($event)" @selectItem="selectItem($event)"></dairy-item>
       </div>
     </div>    
   </div>  
@@ -29,10 +29,14 @@ export default {
   methods:{
     addItem(){       
       this.$emit('addItem', this.$refs.input.value);
+      this.$refs.input.value = '';
     },
-    deleteItem(index){
-      alert(2);
+    deleteItem(index){            
+      this.$emit('deleteItem', index);
       // this.ds.deleteItem(index);
+    },
+    selectItem(index){
+      this.$emit('selectItem', index);
     }
   }
 }
@@ -49,6 +53,17 @@ export default {
 .dairy-items__controls{
     display: flex;
     justify-content: space-between;
+}
+
+input{
+  flex-basis: 60%;
+}
+
+button{
+    height: 37px;
+    background-color: #27CCC0;
+    width: 97px;
+    margin-left: 20px;
 }
 
 </style>
